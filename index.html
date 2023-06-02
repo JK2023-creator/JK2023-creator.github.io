@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JK's ArtSynergy</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/page/page.js"></script>
+    <script src="script.js"></script>
+    <style>
+      /* 타임라인 스타일 */
+      .timeline {
+        position: relative;
+        margin: 40px 0;
+        padding: 0;
+      }
+      .timeline:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        width: 2px;
+        background-color: #000;
+        transform: translateX(-50%);
+      }
+      .timeline-item {
+        position: relative;
+        list-style: none;
+        margin-bottom: 50px;
+      }
+      .timeline-item::after {
+        content: '';
+        position: absolute;
+        top: 5px;
+        left: -8px;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background-color: #000;
+      }
+      .timeline-content {
+        position: relative;
+        margin-left: 20px;
+      }
+      .timeline-content h3 {
+        margin-top: 0;
+      }
+      .timeline-content p {
+        margin: 10px 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#"> ArtSynergy with JK </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#home">홈</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">소개</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#portfolio">포트폴리오</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#Story Book">스토리북</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#sns">SNS</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Home -->
+    <section id="home" class="section">
+      <div class="container">
+        <h1>ArtSynergy</h1>
+        <p></p>
+        <p>
+          Focus on combining Art and Technology to create new and innovative
+          experiences.
+        </p>
+        <p>
+          The interaction of elements that when combined produce a total effect
+          that is greater than the sum of the individual elements.
+        </p>
+        <p>
+          예술과 시너지가 결합했을 때 개별 요소의 합보다 더 큰 전체 효과를
+          생성하는 요소의 상호작용
+        </p>
+      </div>
+
+      <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
+      <div id="player"></div>
+
+      <script>
+        // 2. This code loads the IFrame Player API code asynchronously.
+        var tag = document.createElement('script')
+
+        tag.src = 'https://www.youtube.com/iframe_api'
+        var firstScriptTag = document.getElementsByTagName('script')[0]
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag)
+
+        // 3. This function creates an <iframe> (and YouTube player)
+        //    after the API code downloads.
+        var player
+        function onYouTubeIframeAPIReady() {
+          player = new YT.Player('player', {
+            height: '360',
+            width: '640',
+            videoId: '7zT8IQUXAkw',
+            events: {
+              onReady: onPlayerReady,
+              onStateChange: onPlayerStateChange,
+            },
+          })
+        }
+
+        // 4. The API will call this function when the video player is ready.
+        function onPlayerReady(event) {
+          event.target.playVideo()
+        }
+
+        // 5. The API calls this function when the player's state changes.
+        //    The function indicates that when playing a video (state=1),
+        //    the player should play for six seconds and then stop.
+        var done = false
+        function onPlayerStateChange(event) {
+          if (event.data == YT.PlayerState.PLAYING && !done) {
+            setTimeout(stopVideo, 6000)
+            done = true
+          }
+        }
+        function stopVideo() {
+          player.stopVideo()
+        }
+      </script>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section">
+      <div class="container">
+        <h2>About JK</h2>
+        <p>
+          #Artist #Creator #Explorer #AI Artist #AI creator #Digital Artist #
+          Media Artist
+        </p>
+              <h5>-Main Habitat-</h5>
+              <p>Wild & AI KOREA</p>
+         
+              <h5></h5>
+              <p></p>
+          
+          <!-- 추가적인 타임라인 아이템을 여기에 추가해주세요 -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio -->
+    <section id="portfolio" class="section">
+      <div class="container">
+        <h2>Portfolio</h2>
+        <p>서울로미디어 아트 출품 Team ArtMingle</p>
+        <div class="row">
+          <div class="col-lg-4 col-md-6">
+            <div class="card">
+              <img class="card-img-top" src="portfolio1.png" alt="Portfolio1" />
+              <div class="card-body">
+                <h5 class="card-title">말</h5>
+                <p class="card-text">
+                  제목: "시간의 휘장과 기술의 무늬: 이동의 연대기"
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="card">
+              <img class="card-img-top" src="portfolio2.png" alt="Portfolio2" />
+              <div class="card-body">
+                <h5 class="card-title">말과 마차</h5>
+                <p class="card-text">
+                  제목: "시간의 휘장과 기술의 무늬: 이동의 연대기"
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="card">
+              <img class="card-img-top" src="portfolio3.png" alt="Portfolio3" />
+              <div class="card-body">
+                <h5 class="card-title">미래 컨셉 자동차</h5>
+                <p class="card-text">
+                  제목: "시간의 휘장과 기술의 무늬: 이동의 연대기"
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Story Book -->
+    <section id="Story Book" class="section">
+      <div class="container">
+        <h2>Story Book</h2>
+          <div class="row">
+          <div class="col-lg-4 col-md-6">
+          <img class="img-fluid" src="image1 .png" alt="Image 1" />
+          </div>
+          <div class="col-lg-4 col-md-6">
+          <img class="img-fluid" src="image2 .png" alt="Image 2" />
+          </div>
+          <div class="col-lg-4 col-md-6">
+          <img class="img-fluid" src="image3 .png" alt="Image 3" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SNS -->
+    <section id="sns" class="section">
+      <div class="container">
+        <h5>JK's Social Media </h5>
+        <div class="row">
+          <div class="col-md-4">
+            <a href="https://www.instagram.com/jk2023.creator"
+                ><img src="instagram.png" alt="Instagram"
+            /></a>
+          </div>
+          <div class="col-md-4">
+            <a href="https://youtube.com/@JK2023.creator"
+              ><img src="youtube.png" alt="YouTube"
+            /></a>
+          </div>
+          <div class="col-md-4">
+            <a href="https://jk2023.tistory.com"
+              ><img src="tistory.png" alt="Tistory"
+            /></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
