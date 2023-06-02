@@ -1,0 +1,35 @@
+/* style.css */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f1bbf4;
+}
+
+.navbar {
+  background-color: #a325c3;
+}
+
+.section {
+  padding: 70px 0;
+  text-align: center;
+}
+
+.section h2 {
+  color: #183350;
+}
+
+
+
+.card {
+  margin-bottom: 30px;
+}
+
+  
+  .card-img-top {
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .img-fluid {
+    max-width: 100%;
+    height: auto
+
